@@ -1,26 +1,47 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-slate-900;
+    }
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@layer components {
+    .appbar-container {
+        @apply md-padding lg:lg-padding fixed inset-x-0 top-0 z-20 bg-slate-900 shadow-lg;
+    }
 
-* {
-  box-sizing: border-box;
-}
+    .input-transition {
+        @apply transition-colors delay-75 duration-150 ease-in-out;
+    }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+    .input {
+        @apply input-transition w-full rounded-md border-slate-700 bg-slate-800 text-sm font-medium text-slate-300 focus:border-blue focus:ring-0 focus:ring-offset-0;
+    }
+
+    .xs-padding {
+        @apply py-1 px-2;
+    }
+
+    .sm-padding {
+        @apply py-2 px-3;
+    }
+
+    .md-padding {
+        @apply py-3 px-4;
+    }
+
+    .lg-padding {
+        @apply py-4 px-6;
+    }
+
+    .hover-transition {
+        @apply transition-all delay-75 duration-200 ease-in-out;
+    }
+
+    .grid-layout {
+        @apply grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3;
+    }
 }
